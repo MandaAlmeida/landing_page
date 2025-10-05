@@ -1,0 +1,57 @@
+@use "../utils/variables.scss";
+
+.header {
+  padding: 30px 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    cursor: pointer;
+
+    span {
+      font-size: 36px;
+      color: variables.$white;
+    }
+  }
+
+  ul {
+    display: flex;
+    gap: 20px;
+    color: variables.$white;
+
+    li {
+      cursor: pointer;
+      a {
+        color: variables.$gray-200;
+        font-weight: 400;
+
+        transition: font-weight 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          color: variables.$white;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+button {
+  padding: 14px 28px;
+  font-size: 18px;
+  color: variables.$white;
+  border-radius: 10px;
+  border: none;
+  background-color: variables.$purple-500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: variables.$purple-700;
+  }
+}

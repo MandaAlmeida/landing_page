@@ -1,0 +1,660 @@
+@use "../utils/variables.scss";
+
+.circle {
+  border-radius: 100%;
+  position: absolute;
+  filter: blur(100px);
+  z-index: -2;
+}
+
+.ellipse {
+  position: absolute;
+  bottom: 10px;
+  left: 140px;
+  z-index: -1;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(
+    to right,
+    rgba(34, 149, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 81%
+  );
+  border-radius: 100%;
+  transform: rotateZ(45deg);
+}
+
+.star {
+  position: absolute;
+  z-index: -1;
+  width: 20px; /* Tamanho da estrela */
+  height: 20px;
+  background-color: #e0f2f7; /* Cor da estrela */
+  box-shadow: 0 0 8px 3px #e0f2f7, 0 0 15px 7px #bbdefb; /* Brilho */
+
+  /* Forma da estrela de 4 pontas usando clip-path */
+  clip-path: polygon(
+    50% 0%,
+    /* Ponta superior */ 60% 40%,
+    /* Lado direito superior */ 100% 50%,
+    /* Ponta direita */ 60% 60%,
+    /* Lado direito inferior */ 50% 100%,
+    /* Ponta inferior */ 40% 60%,
+    /* Lado esquerdo inferior */ 0% 50%,
+    /* Ponta esquerda */ 40% 40% /* Lado esquerdo superior */
+  );
+}
+.section_1 {
+  position: relative;
+  padding-top: 65px;
+
+  .div_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 64px;
+    color: variables.$white;
+    font-family: "ClashDisplay", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 18px;
+  }
+
+  p {
+    max-width: 560px;
+    color: variables.$gray-200;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
+
+  .button-line {
+    background-color: transparent;
+    border: 1px variables.$white solid;
+    margin-left: 21px;
+    transition: border-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      border-color: variables.$purple-700;
+      color: variables.$purple-700;
+    }
+  }
+
+  img {
+    margin-top: 70px;
+  }
+
+  .marquee {
+    position: absolute;
+    bottom: -80px;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    background-color: variables.$purple-500;
+    display: flex;
+    align-items: center;
+  }
+
+  .marquee-content {
+    display: flex;
+    gap: 60px;
+    animation: scroll-horizontal 15s linear infinite;
+  }
+
+  .marquee-content li {
+    list-style: none;
+  }
+
+  span {
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 32px;
+    color: variables.$white;
+    font-weight: 800;
+
+    font-family: "ClashDisplay", sans-serif;
+  }
+}
+
+.section_2 {
+  display: flex;
+  justify-content: center;
+  gap: 66px;
+
+  margin-top: 300px;
+  margin-bottom: 101px;
+
+  .container-composicao {
+    position: relative;
+    width: 600px;
+    height: 699px;
+
+    /* Estilo base para todas as imagens dentro do container */
+    img {
+      position: absolute;
+      max-width: 100%;
+    }
+
+    /* 1. Imagem do Fundo (pontos) */
+    .imagem-fundo {
+      top: 120px;
+      left: -40px;
+      width: 187px;
+      z-index: 1;
+    }
+
+    /* 2. Imagem Principal (cartão) */
+    .imagem-principal {
+      top: 0;
+      left: 50px;
+      z-index: 2;
+      width: 320px;
+    }
+
+    /* 3. Imagem do Popup */
+    .imagem-popup {
+      bottom: 58px;
+      right: 70px;
+      z-index: 3;
+      width: 298px;
+    }
+  }
+  .div_text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 78px;
+
+    width: 620px;
+
+    h3 {
+      font-size: 44px;
+      font-weight: 600;
+      margin-bottom: 40px;
+      text-transform: capitalize;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      li {
+        display: flex;
+        gap: 24px;
+        max-width: 485px;
+
+        div {
+          flex: 0 0 64px;
+          height: 64px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: variables.$purple-500;
+          border-radius: 10px;
+
+          i {
+            font-size: 28px;
+          }
+        }
+
+        p {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          font-size: 16px;
+          color: variables.$gray-600;
+
+          span {
+            font-family: "ClashDisplay", sans-serif;
+            color: variables.$white;
+
+            font-size: 20px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+.section_3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 124px;
+  background-color: #0d1849;
+  padding-bottom: 180px;
+
+  h3 {
+    font-size: 60px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  p {
+    font-size: 21px;
+    color: variables.$gray-600;
+  }
+
+  div {
+    position: relative;
+    margin-top: 50px;
+  }
+
+  .video {
+    border-radius: 30px;
+    box-shadow: 0 10px 20px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .player {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: variables.$purple-500;
+    width: 116px;
+    height: 116px;
+    border-radius: 100%;
+    font-size: 20px;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 104px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 105px;
+
+    li {
+      max-width: 290px;
+      text-align: center;
+
+      div {
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: rgba(84, 84, 212, 0.1);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        margin-bottom: 22px;
+      }
+
+      p {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: variables.$white;
+      }
+
+      span {
+        font-family: "ClashDisplay", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+}
+
+.section_4 {
+  position: relative;
+  margin: 0 auto;
+  padding-top: 177px;
+  padding-bottom: 254px;
+  overflow: hidden;
+
+  h3 {
+    font-size: 80px;
+    text-align: center;
+  }
+
+  .div-images {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 636px;
+
+    margin: 0 auto;
+    margin-top: 88px;
+  }
+}
+
+.section_5 {
+  background-color: #0d1849;
+  padding-block: 110px;
+  color: #fff;
+
+  h3 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .carousel-viewport {
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  ul {
+    display: flex;
+    gap: 32px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.5s ease-in-out;
+
+    &.no-transition {
+      transition: none;
+    }
+  }
+
+  li {
+    flex: 0 0 calc((100% - 64px) / 3);
+    box-sizing: border-box;
+
+    .card {
+      background-color: #151925;
+      border-radius: 8px;
+      width: 100%;
+      padding: 24px;
+      border: 2px solid transparent;
+      box-sizing: border-box;
+
+      opacity: 0.5;
+      transform: scale(0.9);
+      transition: transform 0.4s ease, opacity 0.4s ease, border-color 0.4s ease;
+
+      &.is-active {
+        opacity: 1;
+        transform: scale(1);
+        border: 2px solid #4a80ff;
+      }
+
+      .user {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        margin-bottom: 16px;
+
+        img {
+          width: 41px;
+          height: 41px;
+        }
+        p {
+          font-family: "ClashDisplay", sans-serif;
+          font-size: 16px;
+          font-weight: 600;
+          color: variables.$white;
+        }
+        span {
+          font-size: 14px;
+          color: variables.$gray-600;
+        }
+      }
+
+      p {
+        color: variables.$gray-600;
+      }
+
+      .stars {
+        margin-top: 32px;
+        color: #ffd964;
+
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.section_6 {
+  padding-top: 101px;
+  padding-bottom: 223px;
+  margin: 0 auto;
+
+  h3 {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .text_initial {
+    font-size: 16px;
+    color: variables.$gray-600;
+    text-align: center;
+
+    margin-bottom: 64px;
+  }
+
+  .div_button {
+    display: grid;
+    grid-template-columns: 110px 110px;
+    background-color: variables.$white;
+    border-radius: 10px;
+    width: 222px;
+    margin: 0 auto;
+    border: 1px variables.$white solid;
+
+    button {
+      background-color: variables.$white;
+      color: variables.$gray-600;
+      border-radius: 0;
+
+      transition: all 0.3s ease;
+
+      &.active {
+        background-color: variables.$purple-500;
+        color: variables.$white;
+      }
+
+      &.monthly {
+        border-radius: 10px 0 0 10px;
+      }
+
+      &.yearly {
+        border-radius: 0 10px 10px 0;
+      }
+    }
+  }
+
+  .div_cards_price {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1236px;
+    gap: 45px;
+    margin: 0 auto;
+    align-items: flex-start;
+
+    margin-top: 78px;
+
+    .card {
+      position: relative;
+      border-radius: 26px;
+
+      padding: 35px 50px 64px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      max-width: 378px;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        li {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          font-size: 14px;
+
+          i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            background-color: variables.$purple-500;
+
+            font-size: 10px;
+
+            border-radius: 100%;
+          }
+        }
+      }
+    }
+
+    .card_silver,
+    .card_premium {
+      background-color: #0d1849;
+      border: 1px #e9ecf2 solid;
+    }
+
+    .card_gold {
+      position: relative;
+      background-color: variables.$purple-500;
+      padding: 85px 50px 48px;
+      ul {
+        li {
+          i {
+            background-color: #717bf2;
+          }
+        }
+      }
+
+      .popular {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffd88d;
+        border-radius: 60px;
+        border: 6px variables.$white solid;
+
+        padding: 14px 16px;
+
+        span {
+          color: #313131;
+          font-size: 14px;
+        }
+      }
+
+      .add_plan:hover {
+        background-color: #0d1849;
+      }
+    }
+
+    .type_card {
+      font-size: 14px;
+      color: variables.$gray-400;
+
+      margin-bottom: 6px;
+    }
+
+    .price {
+      font-size: 48px;
+      font-weight: 800;
+
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+
+      transition: all 0.5s ease-out;
+      span {
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+
+    .line {
+      width: 100%;
+      height: 1px;
+      background-color: #f2f4fc;
+
+      margin-block: 24px;
+    }
+
+    .add_plan {
+      background-color: variables.$white;
+      color: variables.$purple-500;
+      border-radius: 8px;
+      width: 156px;
+      height: 48px;
+
+      font-size: 16px;
+      font-weight: 400;
+
+      margin-top: 58px;
+
+      &:hover {
+        background-color: variables.$purple-500;
+        color: variables.$white;
+      }
+    }
+  }
+
+  &:has(.div_button .yearly.active) {
+    .div_cards_price .price.yearly {
+      position: absolute;
+      top: 56px;
+      left: 50px;
+      width: 100%;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .div_cards_price .card_gold .price.yearly {
+      top: 106px;
+    }
+  }
+
+  &:has(.div_button .monthly.active) {
+    .div_cards_price .price.monthly {
+      position: absolute;
+      top: 56px;
+      left: 50px;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .div_cards_price .card_gold .price.monthly {
+      top: 106px;
+    }
+  }
+}
+@keyframes scroll-horizontal {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
