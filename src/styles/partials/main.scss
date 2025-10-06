@@ -702,6 +702,10 @@
 
     a {
       color: variables.$purple-500;
+
+      &:hover {
+        color: variables.$purple-700;
+      }
     }
   }
 }
@@ -791,6 +795,8 @@ footer {
     .logo_span {
       font-size: 36px;
       margin: 0;
+      font-family: "ClashDisplay", sans-serif;
+      font-weight: 800;
     }
 
     div {
@@ -813,6 +819,31 @@ footer {
     display: flex;
     justify-content: space-around;
     gap: 94px;
+
+    div {
+      h3 {
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          margin-bottom: 8px;
+
+          a {
+            color: variables.$gray-400;
+
+            &:hover {
+              color: variables.$white;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
