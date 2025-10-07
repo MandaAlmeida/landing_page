@@ -1,4 +1,5 @@
 // Importa a função do carrossel do outro arquivo
+import { animation } from "./components/animation.js";
 import { initCarousel } from "./components/carousel.js";
 import { header } from "./components/header.js";
 import { listItens } from "./components/listItens.js";
@@ -13,4 +14,5 @@ document.addEventListener("DOMContentLoaded", () => {
   pricingToggle();
   listItens();
   header();
+  animation();
 });

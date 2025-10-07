@@ -57,16 +57,20 @@ export function initCarousel() {
     clearInterval(autoplayInterval);
   };
 
-  // --- INTERAÇÕES DO USUÁRIO ---
+  // =============================================================
+  // --- INTERAÇÕES DO USUÁRIO (MODIFICADO PARA MOUSE E TOQUE) ---
+  // =============================================================
   let isDown = false;
   let startX;
   let initialTranslate;
 
-  viewport.addEventListener("mousedown", (e) => {
+  // --- FUNÇÕES GENÉRICAS DE DRAG ---
+  function dragStart(e) {
     isDown = true;
     stopAutoplay();
     viewport.classList.add("is-dragging");
-    startX = e.pageX;
+    // Verifica se é um evento de toque ou de mouse para pegar a coordenada X
+    startX = e.type.includes("touch") ? e.touches[0].pageX : e.pageX;
 
     const transformMatrix = window
       .getComputedStyle(slider)
@@ -77,21 +81,28 @@ export function initCarousel() {
         : Number(transformMatrix.split(",")[4].trim());
     slider.classList.add("no-transition");
     e.preventDefault();
-  });
+  }
 
-  window.addEventListener("mousemove", (e) => {
+  function dragging(e) {
     if (!isDown) return;
-    const walk = e.pageX - startX;
+    // Previne o scroll vertical da página enquanto arrasta horizontalmente no mobile
+    if (e.type.includes("touch")) {
+      e.preventDefault();
+    }
+    const currentX = e.type.includes("touch") ? e.touches[0].pageX : e.pageX;
+    const walk = currentX - startX;
     slider.style.transform = `translateX(${initialTranslate + walk}px)`;
-  });
+  }
 
-  window.addEventListener("mouseup", (e) => {
+  function dragEnd(e) {
     if (!isDown) return;
     isDown = false;
     viewport.classList.remove("is-dragging");
     slider.classList.remove("no-transition");
 
-    const walk = e.pageX - startX;
+    // Para o touchend, a coordenada está em 'changedTouches'
+    const endX = e.type.includes("touch") ? e.changedTouches[0].pageX : e.pageX;
+    const walk = endX - startX;
     const slideWidth = slides[0].offsetWidth;
 
     if (Math.abs(walk) > slideWidth / 4) {
@@ -101,7 +112,21 @@ export function initCarousel() {
     }
 
     startAutoplay();
-  });
+  }
+
+  // --- ADICIONA OS EVENT LISTENERS ---
+
+  // Para Desktop (Mouse)
+  viewport.addEventListener("mousedown", dragStart);
+  window.addEventListener("mousemove", dragging);
+  window.addEventListener("mouseup", dragEnd);
+
+  // Para Mobile (Toque)
+  viewport.addEventListener("touchstart", dragStart);
+  window.addEventListener("touchmove", dragging);
+  window.addEventListener("touchend", dragEnd);
+
+  // --- OUTRAS INTERAÇÕES (TECLADO, MOUSE HOVER) ---
 
   // Navegação por Teclado
   window.addEventListener("keydown", (e) => {
@@ -117,6 +142,7 @@ export function initCarousel() {
   viewport.addEventListener("mouseenter", stopAutoplay);
   viewport.addEventListener("mouseleave", startAutoplay);
 
+  // --- INICIALIZAÇÃO ---
   goToSlide(0);
   startAutoplay();
 }

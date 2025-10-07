@@ -1,0 +1,25 @@
+/* ==============================================
+    ANIMAÇÕES DE SCROLL REVEAL
+    ============================================== */
+
+// Classe base para todos os elementos que serão animados
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px); // Começa um pouco para baixo
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+// Classe que o JavaScript irá adicionar quando o elemento estiver visível
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0); // Volta para a posição original
+}
+
+/* BÔNUS: Animação escalonada (staggered) para itens em uma lista.
+  Isso faz com que os cards apareçam um após o outro, e não todos de uma vez.
+*/
+@for $i from 1 through 10 {
+  .reveal-on-scroll:nth-child(#{$i}) {
+    transition-delay: #{$i * 0.1}s; // Adiciona um pequeno atraso a cada item
+  }
+}

@@ -82,5 +82,5 @@ Este projeto foi desenvolvido com muito carinho por mim, **Amanda Almeida**.
 
 Fique à vontade para se conectar comigo\!
 
-- GitHub: [@MandaAlmeida](https://www.google.com/search?q=https://github.com/MandaAlmeida)
+- GitHub: [@MandaAlmeida](https://github.com/MandaAlmeida)
 - LinkedIn: [@Amanda Almeida](https://www.linkedin.com/in/amanda-almeida-bab4541ab/)
