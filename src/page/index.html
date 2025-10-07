@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body style="background-color: #051139">
-    <header>
+    <header id="header">
       <nav class="header">
         <a href="#" class="logo">
           <img src="./assets/logo.svg" />
@@ -29,10 +29,10 @@
         </a>
 
         <ul>
-          <li><a href="#">Homepage</a></li>
-          <li><a href="#">Feature</a></li>
-          <li><a href="#">Use Cases</a></li>
-          <li><a href="#">Pricing</a></li>
+          <li><a href="#home">Homepage</a></li>
+          <li><a href="#feature">Feature</a></li>
+          <li><a href="#useCase">Use Cases</a></li>
+          <li><a href="#pricing">Pricing</a></li>
           <li><a href="#">Blog</a></li>
         </ul>
 
@@ -40,18 +40,23 @@
       </nav>
     </header>
     <main>
-      <section class="section_1">
+      <section class="section_1" id="home">
         <div class="div_content">
-        <h1>Integrate AI for a competitive analysis for your business ⭐️</h1>
+        <h1>Integrate AI for a </br> competitive analysis  </br> for your business ⭐️</h1>
         <p>
           Elevate your advertising game with creatives that consistently
           outperform your competitors, setting your brand apart.
         </p>
-        <div>
+        <div class="button">
           <button>Join The Waitlist</button>
           <button class="button-line">Know More</button>
         </div> 
-        <img src="./assets/image-main.png" alt="" />
+        <div class="div-image-and-cicle">
+           <img src="./assets/image-main.png" alt="" />
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+        </div>
+       
       </div>
         <div class="marquee">
           <ul class="marquee-content">
@@ -67,13 +72,9 @@
             <li><span style="-webkit-text-stroke: 1px #fff; color: transparent;">Join The Waitlist</span></li>
             <li><span>Join The Waitlist</span></li>
         </div>
-        <div class="circle" style="width: 400px; height: 400px; background-color: #1E50FF; top: 174px; left: -139px"></div>
-        <div class="circle" style="width: 427px; height: 427px; background-color: #9C08FF; bottom: 210px; left: 500px"></div>
-        <div class="circle" style="width: 534px; height: 534px;background-color: #1E50FF; bottom: 30px;
-    right: 300px;"></div>
-        
+        <div class="circle circle-3"></div>        
       </section>
-      <section class="section_2">
+      <section class="section_2" id="feature">
         <div class="container-composicao">
             <img src="../assets/Decoration.svg" alt="Padrão de pontos no fundo" class="imagem-fundo">
             <img src="../assets/image-activity.png" alt="Cartão de atividade financeira" class="imagem-principal">
@@ -81,7 +82,7 @@
         </div>
 
         <div class="div_text">
-          <h3>help you find the best analysis for your business</h3>
+          <h3>help you find the best </br> analysis for your business</h3>
           <ul>
             <li>
               <div>
@@ -113,7 +114,7 @@
           </ul>
         </div>
       </section>
-      <section class="section_3">
+      <section class="section_3" id="useCase">
         <h3>Why Omega would be </br> your best fit?</h2>
         <p>Watch this 1 min video to learn about Orinix.</p>
         <div>
@@ -162,9 +163,8 @@
         <div class="star" style="top: 304px; left: 262px;"></div>
         <div class="star" style="top: 230px; right: 296px;"></div>
          <div class="star" style="bottom: 57px; right: 312px;"></div> 
-        <div class="circle" style="width: 323px; height: 323px;background-color: #1e50ff; top: 140px;
-    left: -60px;"></div>
-        <div class="circle" style="width: 426px; height: 426px;background-color: #9C08FF; bottom: 0px; right: -190px;"></div>
+        <div class="circle circle-4"></div>
+        <div class="circle circle-5"></div>
           <div class="ellipse"></div>
       </section>
       <section class="section_5">
@@ -292,7 +292,7 @@
         </ul>
       </div>
       </section>
-      <section class="section_6">
+      <section class="section_6" id="pricing">
         <h3>Pricing Plans</h3>
         <p class="text_initial">Coca landing page UI Kit no credit card required. All plans come with a </br> free, 14 day trial of our Premium features.</p>
         <div class="div_button">
@@ -302,9 +302,12 @@
         <div class="div_cards_price">
           <section class="card card_silver">
             <p class="type_card">SILVER</p>
+            <div class="div-price">
             <p class="price monthly">R$50<span> /month</span></p>
             <p class="price yearly">R$499<span> /year</span></p>
+            </div>
             <div class="line"></div>
+             <div class="feature-list-container">
             <ul>
               <li><i class="fa-solid fa-check"></i> No Discount</li>
               <li><i class="fa-solid fa-check"></i> Basic Support</li>
@@ -317,6 +320,10 @@
               <li><i class="fa-solid fa-check"></i> Optimize hashtags</li>
               <li><i class="fa-solid fa-check"></i> Unlimited users</li>
             </ul>
+
+            <button class="btn-show-more">Show more <i class="fa-solid fa-chevron-down"></i></button>
+            <button class="btn-show-less">Show less <i class="fa-solid fa-angle-up"></i></button>
+          </div>
             <button class="add_plan">Choose plan</button>
           </section>
            <section class="card card_gold">
@@ -324,10 +331,12 @@
               <span>MOST POPULAR</span>
             </div>
             <p class="type_card">GOLD</p>
+            <div class="div-price">
             <p class="price monthly">R$100<span> /month</span></p>
             <p class="price yearly">R$999<span> /year</span></p>
-
+            </div>
             <div class="line"></div>
+             <div class="feature-list-container">
             <ul>
               <li><i class="fa-solid fa-check"></i> No Discount</li>
               <li><i class="fa-solid fa-check"></i> Basic Support</li>
@@ -340,13 +349,20 @@
               <li><i class="fa-solid fa-check"></i> Optimize hashtags</li>
               <li><i class="fa-solid fa-check"></i> Unlimited users</li>
             </ul>
+
+            <button class="btn-show-more">Show more <i class="fa-solid fa-chevron-down"></i></button>
+            <button class="btn-show-less">Show less <i class="fa-solid fa-angle-up"></i></button>
+          </div>
             <button class="add_plan">Choose plan</button>
           </section>
            <section class="card card_premium">
             <p class="type_card">PREMIUM</p>
+             <div class="div-price">
             <p class="price monthly">R$150<span> /month</span></p>
             <p class="price yearly">R$1699<span> /year</span></p>
+          </div>
             <div class="line"></div>
+           <div class="feature-list-container">
             <ul>
               <li><i class="fa-solid fa-check"></i> No Discount</li>
               <li><i class="fa-solid fa-check"></i> Basic Support</li>
@@ -359,6 +375,10 @@
               <li><i class="fa-solid fa-check"></i> Optimize hashtags</li>
               <li><i class="fa-solid fa-check"></i> Unlimited users</li>
             </ul>
+
+            <button class="btn-show-more">Show more <i class="fa-solid fa-chevron-down"></i></button>
+            <button class="btn-show-less">Show less <i class="fa-solid fa-angle-up"></i></button>
+          </div>
             <button class="add_plan">Choose plan</button>
           </section>
         </div>
@@ -468,7 +488,7 @@
             </ul>
         </div>
 </section>
-      </footer>
+    </footer>
   </body>
 
   <script src="js/bundle.js"></script>
